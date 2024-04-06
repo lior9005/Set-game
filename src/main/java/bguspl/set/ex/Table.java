@@ -32,6 +32,11 @@ public class Table {
     //new
     public volatile Boolean[][] playerTokens; //keep track of player tokens on the table
 
+    //new - for reader-writer
+    private int activePlayers;
+    private int activeDealer;
+    private int waitingDealer;
+
     /**
      * Constructor for testing.
      *
@@ -47,6 +52,9 @@ public class Table {
         for (int i = 0; i < env.config.tableSize; i++) {
             Arrays.fill(playerTokens[i], false);
         }
+        this.activePlayers = 0;
+        this.activeDealer = 0;
+        this.waitingDealer = 0;
     }
 
     /**
@@ -84,9 +92,30 @@ public class Table {
         int cards = 0;
         for (Integer card : slotToCard)
             if (card != null)
-                ++cards;
+                cards++;
         return cards;
     }
+
+    public boolean keyPressed(int slot, int playerID) {
+        if(slotToCard[slot] != null){
+            if(playerTokens[slot][playerID])
+                removeToken(playerID, slot);
+            else{
+                int numOfTokens = 0;
+                for(int i=0; i<env.config.tableSize; i++){
+                    if(playerTokens[i][playerID])
+                        numOfTokens++;
+                }
+                if(numOfTokens < 3){
+                    placeToken(playerID, slot);
+                    if(numOfTokens == 2)
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     /**
      * Places a card on the table in a grid slot.
@@ -102,8 +131,6 @@ public class Table {
 
         cardToSlot[card] = slot;
         slotToCard[slot] = card;
-
-        // TODO implement
         env.ui.placeCard(card, slot);
     }
 
@@ -115,11 +142,9 @@ public class Table {
         try {
             Thread.sleep(env.config.tableDelayMillis);
         } catch (InterruptedException ignored) {}
-
-        // TODO implement
         cardToSlot[slotToCard[slot]] = null;
         slotToCard[slot] = null;
-        env.ui.removeTokens(slot);
+        removeTokens(slot);
         env.ui.removeCard(slot);
     }
 
@@ -129,7 +154,6 @@ public class Table {
      * @param slot   - the slot on which to place the token.
      */
     public void placeToken(int player, int slot) {
-        // TODO implement
         playerTokens[slot][player] = true;
         env.ui.placeToken(player, slot);
     }
@@ -140,18 +164,16 @@ public class Table {
      * @param slot   - the slot from which to remove the token.
      * @return       - true iff a token was successfully removed.
      */
-    public boolean removeToken(int player, int slot) {
-        // TODO implement
-        if (!playerTokens[slot][player]) return false;
-        else{
-            playerTokens[slot][player] = false;
-            env.ui.removeToken(player, slot);
-            return true;
-        }
+    public void removeToken(int player, int slot) {
+        playerTokens[slot][player] = false;
+        env.ui.removeToken(player, slot);
     }
 
-    public boolean containPlayerToken(int player, int slot) {
-        return playerTokens[slot][player];
+    public void removeTokens(int slot) {
+        for(int i=0; i<playerTokens[slot].length; i++){
+            playerTokens[slot][i] = false;
+        }
+        env.ui.removeTokens(slot);
     }
 
     public Integer[] getSlotToCard(){
@@ -162,8 +184,48 @@ public class Table {
         return slotToCard[slot];
     }
 
-    public Integer slotOfCard(int card){
-        return cardToSlot[card];
+    public synchronized void playerLock() {
+        while(!allowPlayer() & !Thread.currentThread().isInterrupted()){
+            try{    
+                wait();
+            } catch (InterruptedException ignored) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        activePlayers++;
+    }
+    public synchronized void playerUnlock() {
+        activePlayers--;
+        notifyAll();
+    }
+    public synchronized void dealerLock() {
+        waitingDealer++;
+        while(!allowDealer()) {
+            try{    
+                wait();
+            } catch (InterruptedException ignored) {}
+        }
+        waitingDealer--;
+        activeDealer++;
+    }
+    public synchronized void dealerUnlock() {
+        activeDealer--;
+        notifyAll();
+    }
+    protected boolean allowPlayer() {
+        return activeDealer == 0 && waitingDealer == 0;
+    }
+    protected boolean allowDealer() {
+        return activeDealer == 0 && activePlayers == 0;
+    }
+
+    public int numOfTokens(int playerID){
+        int tokens = 0;
+        for(int i = 0 ; i< env.config.tableSize; i++){
+            if(playerTokens[i][playerID]){
+                tokens++;
+            }
+        }
+        return tokens;
     }
 }
-
