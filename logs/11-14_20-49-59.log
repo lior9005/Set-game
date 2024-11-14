@@ -1,0 +1,113 @@
+[20:49:59.613] [INFO   ] thread bguspl.set.Main.main() starting.
+[20:49:59.617] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[20:49:59.618] [SEVERE ] configuration file was loaded from resources directory.
+[20:50:00.268] [INFO   ] thread dealer starting.
+[20:50:00.269] [INFO   ] thread dealer starting.
+[20:50:00.270] [INFO   ] thread player 0 starting.
+[20:50:00.270] [INFO   ] thread player 1 starting.
+[20:50:00.270] [SEVERE ] updating countdown to 5000
+[20:50:00.270] [INFO   ] thread player 2 starting.
+[20:50:00.271] [INFO   ] thread player 3 starting.
+[20:50:00.272] [INFO   ] thread computer-0 starting.
+[20:50:00.273] [INFO   ] thread computer-1 starting.
+[20:50:00.273] [INFO   ] thread computer-2 starting.
+[20:50:00.276] [INFO   ] thread computer-3 starting.
+[20:50:00.381] [SEVERE ] placing card 66 in slot 0
+[20:50:00.486] [SEVERE ] placing card 60 in slot 1
+[20:50:00.592] [SEVERE ] placing card 14 in slot 2
+[20:50:00.699] [SEVERE ] placing card 10 in slot 3
+[20:50:00.804] [SEVERE ] placing card 17 in slot 4
+[20:50:00.910] [SEVERE ] placing card 68 in slot 5
+[20:50:01.017] [SEVERE ] placing card 40 in slot 6
+[20:50:01.122] [SEVERE ] placing card 25 in slot 7
+[20:50:01.226] [SEVERE ] placing card 33 in slot 8
+[20:50:01.334] [SEVERE ] placing card 44 in slot 9
+[20:50:01.440] [SEVERE ] placing card 70 in slot 10
+[20:50:01.546] [SEVERE ] placing card 80 in slot 11
+[20:50:01.546] [SEVERE ] updating countdown to 5000
+[20:50:01.546] [SEVERE ] player 1 placing token on slot 0
+[20:50:01.546] [SEVERE ] player 4 placing token on slot 11
+[20:50:01.546] [SEVERE ] player 3 placing token on slot 3
+[20:50:01.546] [SEVERE ] player 2 placing token on slot 0
+[20:50:01.547] [SEVERE ] player 1 placing token on slot 5
+[20:50:01.547] [SEVERE ] player 4 placing token on slot 8
+[20:50:01.547] [SEVERE ] player 3 placing token on slot 1
+[20:50:01.547] [SEVERE ] player 2 placing token on slot 3
+[20:50:01.548] [SEVERE ] player 1 placing token on slot 8
+[20:50:01.548] [SEVERE ] player 4 placing token on slot 2
+[20:50:01.548] [SEVERE ] player 3 placing token on slot 6
+[20:50:01.548] [SEVERE ] player 2 placing token on slot 4
+[20:50:01.549] [SEVERE ] setting player 1 freeze to 0
+[20:50:01.549] [SEVERE ] setting player 4 freeze to 0
+[20:50:01.549] [SEVERE ] setting player 4 freeze to -1
+[20:50:01.549] [SEVERE ] setting player 3 freeze to 0
+[20:50:01.549] [SEVERE ] setting player 2 freeze to 0
+[20:50:01.550] [SEVERE ] setting player 2 freeze to -1
+[20:50:01.549] [SEVERE ] setting player 1 freeze to -1
+[20:50:01.550] [SEVERE ] removing player 4 token from slot 8
+[20:50:01.550] [SEVERE ] setting player 3 freeze to -1
+[20:50:01.551] [SEVERE ] removing player 3 token from slot 6
+[20:50:01.551] [SEVERE ] player 3 placing token on slot 11
+[20:50:01.550] [SEVERE ] removing player 2 token from slot 0
+[20:50:01.550] [SEVERE ] removing player 1 token from slot 5
+[20:50:01.551] [SEVERE ] removing player 4 token from slot 11
+[20:50:01.552] [SEVERE ] setting player 3 freeze to 0
+[20:50:01.552] [SEVERE ] player 1 placing token on slot 4
+[20:50:01.552] [SEVERE ] player 4 placing token on slot 9
+[20:50:01.552] [SEVERE ] setting player 3 freeze to -1
+[20:50:01.552] [SEVERE ] removing player 2 token from slot 4
+[20:50:01.553] [SEVERE ] setting player 1 freeze to 0
+[20:50:01.553] [SEVERE ] player 4 placing token on slot 11
+[20:50:01.553] [SEVERE ] removing player 3 token from slot 3
+[20:50:01.553] [SEVERE ] removing player 2 token from slot 3
+[20:50:01.553] [SEVERE ] setting player 1 freeze to -1
+[20:50:01.554] [SEVERE ] player 2 placing token on slot 3
+[20:50:01.554] [SEVERE ] player 2 placing token on slot 5
+[20:50:01.554] [SEVERE ] player 2 placing token on slot 2
+[20:50:01.553] [SEVERE ] setting player 4 freeze to 0
+[20:50:01.554] [SEVERE ] setting player 4 freeze to -1
+[20:50:01.554] [SEVERE ] player 3 placing token on slot 0
+[20:50:01.554] [SEVERE ] removing player 1 token from slot 4
+[20:50:01.555] [SEVERE ] setting player 2 freeze to 0
+[20:50:01.555] [SEVERE ] setting player 3 freeze to 0
+[20:50:01.555] [SEVERE ] player 1 placing token on slot 9
+[20:50:01.555] [SEVERE ] setting player 2 freeze to -1
+[20:50:01.555] [SEVERE ] removing player 4 token from slot 2
+[20:50:01.555] [SEVERE ] setting player 3 freeze to -1
+[20:50:01.556] [SEVERE ] setting player 1 freeze to 0
+[20:50:01.556] [SEVERE ] player 4 placing token on slot 4
+[20:50:01.556] [SEVERE ] setting player 1 freeze to -1
+[20:50:01.556] [SEVERE ] removing player 3 token from slot 0
+[20:50:01.556] [SEVERE ] removing player 2 token from slot 5
+[20:50:01.557] [SEVERE ] setting player 4 freeze to 0
+[20:50:01.557] [SEVERE ] player 3 placing token on slot 10
+[20:50:01.557] [SEVERE ] removing player 2 token from slot 2
+[20:50:01.557] [SEVERE ] removing player 1 token from slot 0
+[20:50:01.558] [SEVERE ] setting player 4 freeze to -1
+[20:50:01.669] [SEVERE ] removing tokens from slot 1
+[20:50:01.669] [SEVERE ] removing card from slot 1
+[20:50:01.775] [SEVERE ] removing tokens from slot 10
+[20:50:01.775] [SEVERE ] removing card from slot 10
+[20:50:01.881] [SEVERE ] removing tokens from slot 11
+[20:50:01.881] [SEVERE ] removing card from slot 11
+[20:50:01.881] [SEVERE ] setting player 3 score to 1
+[20:50:01.987] [SEVERE ] placing card 26 in slot 1
+[20:50:02.027] [SEVERE ] exit button pressed
+[20:50:02.028] [INFO   ] thread computer-3 terminated.
+[20:50:02.028] [SEVERE ] player 4 placing token on slot 6
+[20:50:02.029] [INFO   ] thread player 3 terminated.
+[20:50:02.029] [SEVERE ] placing card 18 in slot 10
+[20:50:02.029] [INFO   ] thread computer-2 terminated.
+[20:50:02.029] [INFO   ] thread player 2 terminated.
+[20:50:02.029] [SEVERE ] updating countdown to 5000
+[20:50:02.029] [SEVERE ] player 2 placing token on slot 0
+[20:50:02.029] [INFO   ] thread computer-1 terminated.
+[20:50:02.029] [SEVERE ] updating countdown to 5000
+[20:50:02.030] [INFO   ] thread player 1 terminated.
+[20:50:02.030] [INFO   ] thread computer-0 terminated.
+[20:50:02.030] [INFO   ] thread player 0 terminated.
+[20:50:02.031] [SEVERE ] announcing winner(s): player 3
+[20:50:02.034] [INFO   ] thread dealer terminated
+[20:50:02.034] [INFO   ] thread dealer terminated.
+[20:50:02.034] [SEVERE ] thanks for playing... it was fun!
+[20:50:02.035] [INFO   ] thread bguspl.set.Main.main() terminated.
